@@ -5,14 +5,18 @@
     <string name="nav_favourites">My Progress</string>
     <string name="nav_menu">Calendar</string>
     <string name="nav_profile">Profile</string>
+    <string name="nav_scan">Scan In</string>
+    <string name="nav_work">Work To Do</string>
     <string name="home_greeting">Welcome Back 👋</string>
     <string name="home_subtitle">What would you like to do today?</string>
     <string name="quick_access">Quick Access</string>
     <string name="splash_title">ISMLTS(App)</string>
     <string name="splash_subtitle">Your learning journey starts here</string>
+    <string name="logo_description">ISMLTS logo</string>
     <string name="error_title">No Connection</string>
     <string name="error_message">Please check your internet connection and try again.</string>
+    <string name="error_icon_description">No connection</string>
     <string name="retry_button">Try Again</string>
-
-
+    <string name="download_started">Downloading %1$s…</string>
+    <string name="no_app_for_link">No app on this phone can open that link.</string>
 </resources>

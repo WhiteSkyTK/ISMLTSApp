@@ -34,7 +34,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_profile"
-            android:tint="@color/white"
+            app:tint="@color/white"
             android:background="@drawable/bg_profile_circle"
             android:padding="8dp"
             android:contentDescription="@string/nav_profile"
@@ -103,8 +103,101 @@
                     android:textStyle="bold"
                     android:letterSpacing="0.05" />
 
+                <!-- Row 0: what students open most in class -->
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/tileScanIn"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/bg_tile_card"
+                        android:elevation="3dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:background="@drawable/bg_tile_icon_circle"
+                            android:backgroundTint="@color/accent_scan">
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_scan"
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                                android:importantForAccessibility="no" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/nav_scan"
+                            android:textColor="@color/tile_label_text"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tileWork"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/bg_tile_card"
+                        android:elevation="3dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:background="@drawable/bg_tile_icon_circle"
+                            android:backgroundTint="@color/accent_work">
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_assignment"
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                                android:importantForAccessibility="no" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/nav_work"
+                            android:textColor="@color/tile_label_text"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
                 <!-- Row 1 -->
                 <LinearLayout
+                    android:baselineAligned="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -133,8 +226,9 @@
                                 android:layout_height="26dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_announcements"
-                                android:tint="@color/white"
-                                android:contentDescription="@string/nav_messages" />
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                            android:importantForAccessibility="no" />
                         </FrameLayout>
 
                         <TextView
@@ -173,8 +267,9 @@
                                 android:layout_height="26dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_progress"
-                                android:tint="@color/white"
-                                android:contentDescription="@string/nav_favourites" />
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                            android:importantForAccessibility="no" />
                         </FrameLayout>
 
                         <TextView
@@ -193,6 +288,7 @@
 
                 <!-- Row 2 -->
                 <LinearLayout
+                    android:baselineAligned="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -222,8 +318,9 @@
                                 android:layout_height="26dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_calendar"
-                                android:tint="@color/white"
-                                android:contentDescription="@string/nav_menu" />
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                            android:importantForAccessibility="no" />
                         </FrameLayout>
 
                         <TextView
@@ -262,8 +359,9 @@
                                 android:layout_height="26dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_profile"
-                                android:tint="@color/white"
-                                android:contentDescription="@string/nav_profile" />
+                                app:tint="@color/white"
+                                android:contentDescription="@null"
+                            android:importantForAccessibility="no" />
                         </FrameLayout>
 
                         <TextView
@@ -340,8 +438,8 @@
                     android:layout_height="44dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_wifi_off"
-                    android:tint="@color/accent_announcements"
-                    android:contentDescription="No connection" />
+                    app:tint="@color/accent_announcements"
+                    android:contentDescription="@string/error_icon_description" />
 
             </FrameLayout>
 
@@ -398,8 +496,8 @@
                     android:layout_height="52dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_school"
-                    android:tint="@color/primary_blue"
-                    android:contentDescription="Logo" />
+                    app:tint="@color/primary_blue"
+                    android:contentDescription="@string/logo_description" />
 
             </FrameLayout>
 

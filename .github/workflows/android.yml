@@ -1,31 +1,55 @@
-name: MobileApp - Android Build & Test
+name: Android - build, test and lint
 
+# Every push and pull request: unit tests, Android Lint and a debug APK you can download from the run
 on:
   push:
-    branches: [ main ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ main ]
+    branches: [ master, main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./MobileApp
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      # Gradle's daemon runs on JDK 25 (gradle/gradle-daemon-jvm.properties)
+      - name: Set up JDK 25
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'temurin'
+          distribution: temurin
+          java-version: '25'
+          cache: gradle
 
-      - name: Grant execute permission for gradlew
+      - name: Make gradlew runnable
         run: chmod +x gradlew
 
       - name: Unit tests
-        run: ./gradlew test
+        run: ./gradlew testDebugUnitTest
 
-      - name: Build debug APK
+      - name: Android Lint
+        run: ./gradlew lintDebug
+
+      - name: Build the debug APK
         run: ./gradlew assembleDebug
+
+      - name: Keep the debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ismlts-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 7
+
+      - name: Keep the test and lint reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            app/build/reports/
+            app/build/test-results/
+          retention-days: 7

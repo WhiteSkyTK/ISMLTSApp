@@ -1,32 +1,26 @@
+# Gradle and Android Studio
 *.iml
 .gradle
-/local.properties
+/build
+/captures
+.externalNativeBuild
+.cxx
+.kotlin
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+/.idea/deploymentTargetSelector.xml
+
+# This PC's SDK path, and anything secret: signing keys and their passwords never go in git
 local.properties
+*.jks
+*.keystore
+keystore.properties
 
-# .NET
-WebApp/bin/
-WebApp/obj/
-*.user
-.vs/
-*.suo
-
-# Android
-MobileApp/build/
-MobileApp/.gradle/
-MobileApp/local.properties
-MobileApp/.idea/
-*.iml
+# Build outputs
 *.apk
 *.aab
 .DS_Store
